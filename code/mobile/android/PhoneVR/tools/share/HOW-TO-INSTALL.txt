@@ -1,0 +1,56 @@
+PHONE PCVR (alpha) - play SteamVR games on your phone in a cheap VR headset shell.
+Head tracking (6DoF) uses the phone's camera via ARCore. Free and open source (GPL-3.0).
+
+WHAT YOU NEED
+  - Android 10+ phone with ARCore ("Google Play Services for AR") support
+  - A Windows PC with SteamVR
+  - A phone VR shell / Cardboard-style headset, with the rear camera left uncovered
+  - PC and phone on the same fast Wi-Fi (5 GHz). Best: turn on Windows
+    "Mobile hotspot" (5 GHz) and connect the phone straight to the PC.
+
+1) INSTALL THE APP ON THE PHONE
+   Option A (no PC tools): copy the .apk to the phone (USB, Drive, Discord...),
+     tap it, and allow "Install unknown apps" for whichever app opened it.
+     Play Protect may warn that the app is unknown: tap "More details" > "Install anyway".
+   Option B (USB): turn on USB debugging on the phone, plug it in, and
+     double-click Install-to-phone.bat.
+
+2) INSTALL THE PC STREAMER
+   Download ALVR v20.8.0 exactly (other versions won't connect):
+     https://github.com/alvr-org/ALVR/releases/tag/v20.8.0
+   Get the Windows streamer download, unzip it, and run "ALVR Dashboard.exe". Finish its setup wizard.
+   Recommended in the dashboard settings: video codec H264, and
+   "Transcoding view resolution" / emulated width around 1072 if the picture flickers.
+
+3) CONNECT
+   Open Phone PCVR on the phone and tap Start VR. In the ALVR dashboard on the PC
+   the phone appears under "New devices": click Trust. Then launch SteamVR from
+   the dashboard. Put the phone in the headset.
+
+IN VR
+   Gear icon: settings menu. Volume keys: tap = volume, hold Vol+ = adjust
+   headset fit, hold Vol- = SteamVR menu, tap both = reset play space.
+
+PC SETTINGS (optional but recommended)
+   PC\alvr-pc-profile.ps1 sets ALVR up for this app. Close SteamVR and the dashboard first, then
+   in PowerShell (use your ALVR folder, the one with "ALVR Dashboard.exe"):
+     powershell -ExecutionPolicy Bypass -File PC\alvr-pc-profile.ps1 -Profile BadWifiHighEndPc -StreamerDir "C:\path\to\alvr"
+   Profiles: BadWifiHighEndPc or GoodWifiLowEndPc. It backs up your settings first;
+   -Profile Restore puts them back.
+
+HAND TRACKING (experimental, off by default)
+   Settings > Hand tracking. Pinch = trigger, fist = grip, left pinch-and-drag = walk.
+   In the ALVR dashboard turn OFF its own hand gestures (Settings > Headset > Controllers >
+   Gestures), otherwise both fire.
+   Older phones: run hand tracking on the PC instead, see PC\pc-assist\README.md
+   (needs Python) and turn on "Hands: PC assist" on the phone.
+
+KNOWN ISSUES
+   - Only tested on a Galaxy S24 Ultra so far. Other phones may need tweaking; please report.
+   - Samsung phones drop to 60 Hz while the camera is on.
+   - 6DoF pauses in the dark or facing blank walls (ARCore needs light and texture), and while a
+     hand is very close to the camera.
+   - Hands are only seen in front of the camera; low or far-right hands drop out.
+   - Gaze pointer: the SteamVR dashboard laser doesn't always show up.
+
+This is an early alpha. Expect rough edges.

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Phone PCVR palette: near-black for OLED, violet → cyan accent. -->
+    <color name="pcvr_bg">#0B0D12</color>
+    <color name="pcvr_surface">#151922</color>
+    <color name="pcvr_surface_high">#1D2230</color>
+    <color name="pcvr_outline">#2A3142</color>
+    <color name="pcvr_text">#ECEFF6</color>
+    <color name="pcvr_text_dim">#9AA3B5</color>
+    <color name="pcvr_violet">#8B5CF6</color>
+    <color name="pcvr_cyan">#22D3EE</color>
+    <color name="pcvr_ok">#34D399</color>
+    <color name="pcvr_warn">#FBBF24</color>
+    <color name="pcvr_bad">#F87171</color>
+    <color name="pcvr_on_accent">#0B0D12</color>
+    <color name="pcvr_icon_bg">#11131B</color>
+</resources>

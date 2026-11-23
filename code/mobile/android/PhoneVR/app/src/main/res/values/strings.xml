@@ -1,0 +1,242 @@
+<resources>
+    <string name="app_name" translatable="false">Phone PCVR</string>
+    <string name="tagline">PC VR on your phone, with 6DoF tracking from the phone\'s own camera.</string>
+
+    <!-- Home -->
+    <string name="start_vr">Start VR</string>
+    <string name="start_vr_hint">Tap Start, then put the phone in your headset. In VR, the ✕ (top left) returns here and ⚙ (top right) has quick settings.</string>
+    <string name="section_ready">Before you start</string>
+    <string name="section_tracking">Tracking</string>
+    <string name="section_display">Display</string>
+    <string name="section_headset">Headset</string>
+    <string name="section_tips">Tips</string>
+    <string name="scan_viewer">Scan headset QR code</string>
+    <string name="scan_viewer_desc">Loads your headset\'s lens profile. Use the QR code printed on Cardboard-style viewers.</string>
+    <string name="about_credits">About &amp; credits</string>
+    <string name="version_fmt">Version %1$s</string>
+
+    <string name="check_network">Network</string>
+    <string name="check_network_hotspot">On the PC\'s hotspot (%1$s). Best latency.</string>
+    <string name="check_network_wifi">On Wi-Fi (%1$s). A PC hotspot on 5 GHz gives lower latency.</string>
+    <string name="check_network_none">Not on Wi-Fi. Join the same network as your PC (ideally its Windows Mobile hotspot).</string>
+    <string name="check_arcore">6DoF tracking (ARCore)</string>
+    <string name="check_arcore_ok">Ready.</string>
+    <string name="check_arcore_install">Google Play Services for AR needs installing or updating. Tap to install.</string>
+    <string name="check_arcore_unsupported">This phone doesn\'t support ARCore. You\'ll get rotation-only (3DoF) tracking.</string>
+    <string name="check_arcore_checking">Checking…</string>
+    <string name="check_arcore_off">Turned off below. Rotation-only (3DoF).</string>
+    <string name="check_camera">Camera permission</string>
+    <string name="check_camera_ok">Granted.</string>
+    <string name="check_camera_missing">Needed for 6DoF and hand tracking. Tap to grant.</string>
+    <string name="check_network_manual">Manual: finding the PC at %1$s. This phone is %2$s.</string>
+    <string name="check_network_manual_noip">Manual: PC set to %1$s, but this phone isn\'t on Wi-Fi.</string>
+    <string name="unknown">unknown</string>
+    <string name="hostname_unknown">shown after you start VR once</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="grant">Grant</string>
+
+    <!-- Network dialog -->
+    <string name="network_mode_auto">Automatic (recommended)</string>
+    <string name="network_mode_auto_desc">The phone broadcasts on the network and the PC finds it.</string>
+    <string name="network_mode_manual">Manual PC address</string>
+    <string name="network_mode_manual_desc">Also contacts this PC directly. Use it if the PC never sees the phone, e.g. on guest Wi-Fi, through a VPN, or on routers that block broadcasts.</string>
+    <string name="pc_ip_hint">PC IP address</string>
+    <string name="pc_ip_invalid">Enter an IPv4 address like 192.168.1.20</string>
+    <string name="use_hotspot_ip">Use Windows hotspot PC (192.168.137.1)</string>
+    <string name="network_this_phone">This phone: IP %1$s, ALVR name %2$s.\n\nIf the PC still doesn\'t list the phone, add it in the ALVR dashboard under Devices → Add device manually, with this name and IP.</string>
+    <string name="open_wifi_settings">Open Wi-Fi settings</string>
+    <string name="network_settings">Network settings</string>
+
+    <!-- Camera dialog -->
+    <string name="camera_dialog_granted">Phone PCVR can use the camera for 6DoF and hand tracking. You can revoke this in the app\'s permissions.</string>
+    <string name="camera_dialog_missing">The camera is needed for 6DoF and hand tracking. Without it you get rotation-only (3DoF) tracking. If Grant does nothing, allow it in the app\'s permissions.</string>
+    <string name="open_app_permissions">App permissions</string>
+
+    <!-- ARCore dialog -->
+    <string name="arcore_dialog">Status: %1$s\n\n6DoF uses Google Play Services for AR to track the phone\'s position from the rear camera. Turn it off for rotation-only tracking, for example in a dark room.</string>
+    <string name="turn_6dof_off">Turn 6DoF off</string>
+    <string name="turn_6dof_on">Turn 6DoF on</string>
+    <string name="arcore_install_update">Install / update</string>
+
+    <!-- PC dialog -->
+    <string name="pc_dialog">On the PC, run ALVR Streamer v20.8.0 (other versions won\'t connect) and launch SteamVR from its dashboard.\n\nThis phone shows up as %1$s (IP %2$s). Press Trust next to it the first time.\n\nIf it never appears, check Network settings.</string>
+    <string name="alvr_download">Get ALVR v20.8.0</string>
+
+    <string name="check_pc">PC streamer</string>
+    <string name="check_pc_desc">Run ALVR Streamer v20.8.0 on your PC and press Trust on this phone the first time it appears. Tap for this phone\'s name and help.</string>
+
+    <!-- Settings (shared by the home screen and the in-VR ⚙ menu) -->
+    <string name="arcore_6dof">6DoF head tracking</string>
+    <string name="arcore_6dof_desc">Lean and walk using the rear camera (ARCore). Off = rotation only.</string>
+    <string name="timewarp">Timewarp</string>
+    <string name="timewarp_desc">Re-projects frames to your latest head rotation. Cuts perceived lag when turning.</string>
+    <string name="hand_tracking">Hand tracking (experimental)</string>
+    <string name="hand_tracking_desc">Uses the camera to track your hands as controllers. Pinch = trigger, fist = grip. Unreliable for now.</string>
+    <string name="max_brightness">Max brightness</string>
+    <string name="max_brightness_desc">Forces full screen brightness while streaming.</string>
+    <string name="arcore_overlay">Tracking debug overlay</string>
+    <string name="arcore_overlay_desc">Shows tracking numbers inside each eye.</string>
+    <!-- Headset fit -->
+    <string name="section_fit">Headset fit</string>
+    <string name="fit_intro">Line the two pictures up with your headset\'s lenses and your eyes. Changes apply live, even while streaming.</string>
+    <string name="fit_ipd">Lens IPD</string>
+    <string name="fit_ipd_desc">Distance between the two pictures. Match your headset\'s lens spacing: if you see double or straining, change this first.</string>
+    <string name="fit_ipd_value">%1$s (%2$s)</string>
+    <string name="fit_size">Picture size</string>
+    <string name="fit_size_desc">Makes each eye\'s picture bigger or smaller (magnification).</string>
+    <string name="fit_fov">Field of view</string>
+    <string name="fit_fov_desc">How far the picture reaches towards the edges. Lower it if the edges look cut off or stretched.</string>
+    <string name="fit_vertical">Vertical position</string>
+    <string name="fit_vertical_desc">Moves both pictures up or down to the lens centres.</string>
+    <string name="fit_stereo">3D depth</string>
+    <string name="fit_stereo_desc">How far apart the game\'s cameras are, without moving the pictures. More = the world looks smaller and deeper.</string>
+    <string name="fit_centered">profile default</string>
+    <string name="fit_up">%1$s up</string>
+    <string name="fit_down">%1$s down</string>
+    <string name="fit_stereo_same">same as lens IPD</string>
+    <string name="fit_reset">Reset fit</string>
+    <string name="fit_volume_keys">Volume key controls in VR</string>
+    <string name="fit_volume_keys_desc">While streaming:\n• Tap Vol + / Vol − : volume\n• Hold Vol + : headset fit\n• Hold Vol − : SteamVR menu\n• Tap both : reset play space\n• Hold both : gaze pointer on / off\nWith Gaze pointer on: Vol − is the trigger (tap = click, hold = drag) and tap Vol + opens the SteamVR menu.\nIn headset fit: tap = change, hold Vol + = next, hold Vol − = back, tap both = save.</string>
+    <string name="gaze_pointer">Gaze pointer</string>
+    <string name="gaze_pointer_desc">A laser that follows where you look, as your right controller. In VR: hold both volume keys to turn it on or off. While on, Vol − = trigger (tap = click, hold = drag) and tap Vol + = SteamVR menu. Replaces the right tracked hand while on.</string>
+    <string name="gaze_on_msg">GAZE POINTER ON\n\nTap Vol +  SteamVR menu\nVol −  click (hold = drag)\nHold Vol +  laser angle</string>
+    <string name="gaze_controls">STEAMVR MENU\n\nVol −  click · Hold Vol +  laser angle</string>
+    <string name="gaze_off_msg">GAZE POINTER OFF</string>
+    <string name="gaze_pitch">Gaze laser angle</string>
+    <string name="gaze_pitch_desc">Tilts the gaze laser up or down if its dot isn\'t where you\'re looking.</string>
+    <string name="gaze_pitch_centered">0°</string>
+    <string name="steamvr_menu">Open / close SteamVR menu</string>
+    <string name="steamvr_menu_sent">STEAMVR MENU</string>
+    <string name="fit_overlay">HEADSET FIT  %1$d/%2$d\n\n%3$s\n%4$s\n\nTap Vol + / Vol −  change\nHold Vol +  %5$s · Hold Vol −  back\nTap both  save &amp; exit</string>
+    <string name="fit_overlay_next">next setting</string>
+    <string name="fit_overlay_done">finish</string>
+    <string name="fit_saved">HEADSET FIT SAVED</string>
+    <string name="fit_menu">Adjust headset fit (volume keys)</string>
+
+    <!-- Play space -->
+    <string name="section_play_space">Play space</string>
+    <string name="reset_play_space">Reset play space</string>
+    <string name="reset_play_space_desc">Makes where you are and the way you\'re facing the centre and forward of the play space. In VR: tap both volume keys together, or ⚙ → Reset play space.</string>
+    <string name="steamvr_menu_desc">In VR: hold Vol − to open or close the SteamVR menu (the dashboard and in-game overlays like VRChat\'s).</string>
+    <string name="reset_play_space_queued">Reset queued: it happens a few seconds after you next tap Start VR, so face forward once the headset is on.</string>
+    <string name="recenter_on_start">Reset play space on every start</string>
+    <string name="recenter_on_start_desc">A few seconds after the stream screen opens, wherever you\'re facing becomes forward.</string>
+    <string name="play_space_reset_done">PLAY SPACE RESET</string>
+
+    <string name="switch_viewer">Scan headset QR code</string>
+    <string name="back_to_home">Back to home screen</string>
+
+    <string name="tips_body">• Play seated and move with a keyboard or gamepad. Head tracking is the strong part.\n• Keep the rear camera uncovered, and play in a lit room with some visible detail.\n• On Windows, turn on Mobile hotspot (5 GHz) and join it from the phone instead of using a router.\n• Slow, smooth head movement tracks best.</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_body">Phone PCVR streams SteamVR games from your PC to your phone, with 6DoF head tracking, timewarp and experimental hand tracking computed on the phone.\n\nIt\'s free software under the GNU General Public License v3.0, and it\'s built on the open-source projects below. Thank you to everyone who made them.</string>
+    <string name="credits_title">Built with</string>
+    <string name="licenses_title">Licences</string>
+    <string name="license_ours">Phone PCVR is licensed under the GNU GPL v3.0. You can redistribute and modify it under those terms. It comes with no warranty.</string>
+    <string name="view_license">View licence text</string>
+    <string name="trademark_note">PhoneVR, ALVR, SteamVR, ARCore, Cardboard and MediaPipe are names of their respective owners. Phone PCVR isn\'t affiliated with or endorsed by them.</string>
+
+    <!-- Runtime messages -->
+    <string name="camera_permission_needed">Camera permission is needed for 6DoF tracking. Running rotation-only (3DoF).</string>
+    <string name="read_storage_permission">Storage access is needed to load your headset\'s lens profile.</string>
+    <string name="app_crash_toast">Phone PCVR crashed last time. Tap to view the log.</string>
+    <string name="crash_share">Share</string>
+    <string name="crash_delete">Delete</string>
+    <string name="source_code">Source code</string>
+
+    <!-- Comfort -->
+    <string name="comfort_guard">Comfort guard</string>
+    <string name="comfort_guard_desc">If the stream falls badly behind (frames arriving seconds late), shows a steady head-tracked room with an explanation instead of a lagging world.</string>
+    <string name="problem_banner">Problem messages in VR</string>
+    <string name="problem_banner_desc">Tells you when 6DoF pauses (too dark, too little detail, hand too close) or the stream falls behind, so nothing looks random.</string>
+    <string name="banner_stream_late">Stream %.1f s behind. Paused for comfort.</string>
+    <string name="banner_too_dark">6DoF paused: too dark for the camera. Turn on a light.</string>
+    <string name="banner_no_features">6DoF paused: the camera sees too little detail. Face furniture or a textured area.</string>
+    <string name="banner_fast_motion">6DoF paused: moving too fast for the camera.</string>
+    <string name="banner_camera_blocked">6DoF paused: camera blocked or unavailable.</string>
+    <string name="banner_lost">6DoF paused: camera tracking lost. Rotation only.</string>
+    <string name="banner_settling">6DoF resuming…</string>
+    <string name="banner_hand_close">6DoF paused: hand too close to the camera.</string>
+
+    <!-- Streaming: latency and artifacts -->
+    <string name="section_streaming">Streaming: latency &amp; picture</string>
+    <string name="streaming_note">Pick the profile that matches your setup. Each option can also be switched in VR (⚙ → Latency &amp; picture) to compare.</string>
+    <string name="stream_profile">Profile</string>
+    <string name="profile_stock">Stock</string>
+    <string name="profile_stock_desc">The original behaviour. Nothing extra.</string>
+    <string name="profile_low_end_pc">Good Wi-Fi, low-end PC</string>
+    <string name="profile_low_end_pc_desc">Lowest latency. Shows the newest frame right away. Pair with the low-end PC streamer profile (lower resolution and bitrate).</string>
+    <string name="profile_bad_wifi">Bad Wi-Fi, high-end PC</string>
+    <string name="profile_bad_wifi_desc">Smoothest on a weak link. Keeps one spare frame, freezes instead of smearing when a frame is lost, and limits prediction during lag spikes.</string>
+    <string name="profile_custom">Custom</string>
+    <string name="profile_custom_desc">You changed an option by hand.</string>
+    <string name="frame_pacing">Low-latency frame pacing</string>
+    <string name="frame_pacing_desc">Draws each frame just before the screen refreshes instead of several frames ahead. Biggest cut in screen delay.</string>
+    <string name="latest_frame">Newest frame only</string>
+    <string name="latest_frame_desc">Shows the newest decoded frame and skips older queued ones. Lower latency; a jittery link may look less smooth.</string>
+    <string name="hide_corrupted">Freeze instead of smearing</string>
+    <string name="hide_corrupted_desc">After a lost frame, keeps showing the last good picture (still head-tracked) until a clean keyframe arrives, instead of blocky smears.</string>
+    <string name="limit_prediction">Limit prediction during lag</string>
+    <string name="limit_prediction_desc">Caps how far ahead your head is predicted when the network spikes, so the view stops running ahead of you.</string>
+    <string name="tw_aim_measured">Timewarp: measured screen delay</string>
+    <string name="tw_aim_measured_desc">Aims timewarp at the screen delay this phone actually measures, instead of a fixed guess.</string>
+    <string name="tw_damped">Timewarp: no overshoot on stops</string>
+    <string name="tw_damped_desc">Predicts less while a head turn slows down, so the view does not swing past where you stopped.</string>
+    <string name="tw_stretch_edges">Timewarp: fill edges</string>
+    <string name="tw_stretch_edges_desc">Where timewarp runs out of picture, repeat the edge instead of showing black.</string>
+    <string name="buffer_frames">Frame buffer</string>
+    <string name="buffer_frames_desc">Spare decoded frames kept waiting when Newest frame only is off. 1 smooths a jittery link for about 16 ms more latency. PC setting = ALVR\'s own logic.</string>
+    <string name="pc_setting">PC setting</string>
+    <string name="decoder_wait">Decoder wait</string>
+    <string name="decoder_wait_desc">How long a frame may wait for the video decoder before it is dropped. Dropping one corrupts the picture until the next keyframe.</string>
+    <string name="prediction_cap">Prediction limit</string>
+    <string name="prediction_cap_desc">Most look-ahead allowed when Limit prediction during lag is on.</string>
+    <string name="position_prediction">Position prediction max</string>
+    <string name="position_prediction_desc">How far ahead head position may be extrapolated. Lower = less overshoot when you stop moving.</string>
+    <string name="overscan">Overscan</string>
+    <string name="overscan_desc">The PC renders this much extra on every edge, so timewarp turns into real picture instead of black. Costs a little sharpness.</string>
+    <string name="tw_prediction">Timewarp prediction</string>
+    <string name="tw_prediction_desc">How much of the screen delay timewarp predicts ahead. Lower if turns feel like they run ahead.</string>
+    <string name="pacing_budget">Pacing budget</string>
+    <string name="pacing_budget_desc">How long before the refresh drawing starts (with frame pacing). Raise if the overlay shows render below 60 Hz.</string>
+    <string name="latency_menu">Latency &amp; picture</string>
+    <string name="tw_positional">Experimental: positional timewarp</string>
+    <string name="tw_positional_desc">Also shifts the picture when you walk, lean or tilt, at display time, instead of waiting for the next PC frame. Assumes the scene is about one distance away (below).</string>
+    <string name="hands_hd_camera">Hands: own HD camera stream</string>
+    <string name="hands_hd_camera_desc">With hand tracking on, the app opens the camera itself and gives hands a sharper stream of their own, instead of ARCore\'s small image. Applies the next time VR starts.</string>
+    <string name="hands_phone_gestures">Hands: phone pinch and grip</string>
+    <string name="hands_phone_gestures_desc">Pinch = trigger, fist = grip, decided on the phone with a firm threshold and a short delay, so a relaxed hand doesn\'t click. Turn off ALVR\'s own gestures on the PC so they don\'t fire as well.</string>
+    <string name="hands_air_joystick">Hands: air joystick (walk)</string>
+    <string name="hands_pc_assist">Hands: PC assist</string>
+    <string name="hands_pc_assist_desc">Run hand tracking on your PC instead of the phone: faster and steadier on older phones. Start pc_assist on the PC (pc-assist folder); the phone sends its hand camera as JPEG over Wi-Fi (about 5-12 Mbit/s). Without the PC app the phone tracks hands itself.</string>
+    <string name="pc_assist_h264">PC assist: H.264 video</string>
+    <string name="pc_assist_h264_desc">Send the hand camera to the PC as H.264 from the phone\'s hardware encoder (about 4 Mbit/s) instead of JPEG pictures (about 12 Mbit/s). Off = JPEG.</string>
+    <string name="pc_assist_mbps">PC assist: H.264 bitrate</string>
+    <string name="pc_assist_mbps_desc">Wi-Fi used by the hand camera in H.264 mode. Higher = sharper fingers for the PC, more Wi-Fi.</string>
+    <string name="pc_assist_quality">PC assist: JPEG quality</string>
+    <string name="pc_assist_quality_desc">JPEG quality of the camera frames sent to the PC. Lower = less Wi-Fi traffic, slightly less precise fingers.</string>
+    <string name="hands_air_joystick_desc">Pinch and hold with your left hand, then move the hand: that\'s the left thumbstick, relative to where you face. Let go to stop. A quick left pinch without moving is still a click.</string>
+    <string name="joy_deadzone">Air joystick: dead zone</string>
+    <string name="joy_deadzone_desc">How far the hand must move from the pinch point before you start moving.</string>
+    <string name="joy_full">Air joystick: full speed at</string>
+    <string name="joy_full_desc">Hand distance from the pinch point for full stick tilt.</string>
+    <string name="pinch_press">Pinch: click below</string>
+    <string name="hands_which">Which hands</string>
+    <string name="hands_which_desc">Tracking one hand only is faster (MediaPipe stops looking for a second hand) and that hand can never be mistaken for the other one.</string>
+    <string name="hands_which_both">Both</string>
+    <string name="hands_which_left">Left only</string>
+    <string name="hands_which_right">Right only</string>
+    <string name="hands_which_menu">Hands: %1$s</string>
+    <string name="pinch_press_desc">Thumb-to-index distance (centre to centre) that counts as a click. Lower = needs a firmer pinch.</string>
+    <string name="pinch_release">Pinch: release above</string>
+    <string name="pinch_release_desc">Distance at which the click lets go. Keep well above the click distance.</string>
+    <string name="grip_press">Grip: grab below</string>
+    <string name="grip_press_desc">How closed the fist must be to grab (fingertips to palm). Lower = tighter fist.</string>
+    <string name="grip_release">Grip: release above</string>
+    <string name="grip_release_desc">How open the hand must be to let go.</string>
+    <string name="tw_plane">Positional timewarp distance</string>
+    <string name="tw_plane_desc">How far away positional timewarp assumes things are. Lower if nearby objects swim when you move, higher if the distance does.</string>
+    <string name="stream_options_restart">Profile set. It applies right away; resolution changes need the PC streamer profile.</string>
+</resources>

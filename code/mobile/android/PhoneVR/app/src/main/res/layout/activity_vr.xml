@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"/>
+
+    <!-- ARCore debug readout, one copy centred in each eye so it can be read in the headset. -->
+    <LinearLayout
+        android:id="@+id/arcore_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/arcore_text_left"
+            style="@style/ArCoreOverlayText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/arcore_text_right"
+            style="@style/ArCoreOverlayText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Problem banner (6DoF paused, stream behind), one copy in each eye, upper middle. -->
+    <LinearLayout
+        android:id="@+id/problem_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/problem_text_left"
+            style="@style/FitOverlayText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/problem_text_right"
+            style="@style/FitOverlayText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Headset-fit adjust mode (volume keys), one copy centred in each eye. -->
+    <LinearLayout
+        android:id="@+id/fit_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/fit_text_left"
+            style="@style/FitOverlayText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/fit_text_right"
+            style="@style/FitOverlayText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Default UiLayer layout that assumes landscape orientation !-->
+    <!-- The ui and settings button holders are 84dp. This is twice the size -->
+    <!-- of the button itself after padding (24dp image, 9dp padding twice). -->
+    <FrameLayout
+        android:id="@+id/ui_back_button_holder"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="84dp"
+        android:layout_height="84dp">
+        <ImageButton
+            style="@style/UiButton"
+            android:id="@+id/ui_back_button"
+            android:contentDescription="back"
+            android:src="@drawable/cardboard_oss_quantum_ic_close_white_24"
+            android:layout_gravity="start|top"
+            android:onClick="closeSample"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/ui_alignment_marker"
+        android:layout_width="@dimen/alignment_marker_thickness"
+        android:layout_height="@dimen/alignment_marker_height"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/alignment_marker_color">
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/ui_settings_button_holder"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="42dp"
+        android:layout_height="42dp">
+        <ImageButton
+            style="@style/UiButton"
+            android:id="@+id/ui_settings_button"
+            android:contentDescription="settings"
+            android:src="@drawable/cardboard_oss_quantum_ic_settings_white_24"
+            android:layout_gravity="end|top"
+            android:onClick="showSettings"/>
+    </FrameLayout>
+</RelativeLayout>

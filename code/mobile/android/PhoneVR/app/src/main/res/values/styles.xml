@@ -1,0 +1,77 @@
+<resources>
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/pcvr_cyan</item>
+        <item name="colorOnPrimary">@color/pcvr_on_accent</item>
+        <item name="colorSecondary">@color/pcvr_violet</item>
+        <item name="colorSurface">@color/pcvr_surface</item>
+        <item name="colorOnSurface">@color/pcvr_text</item>
+        <item name="android:colorBackground">@color/pcvr_bg</item>
+        <item name="android:windowBackground">@color/pcvr_bg</item>
+        <item name="android:statusBarColor">@color/pcvr_bg</item>
+        <item name="android:navigationBarColor">@color/pcvr_bg</item>
+        <item name="android:textColorPrimary">@color/pcvr_text</item>
+        <item name="android:textColorSecondary">@color/pcvr_text_dim</item>
+    </style>
+
+    <!-- In-headset activity: full screen, dark popup for the ⚙ menu. -->
+    <style name="AppTheme.VR" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/pcvr_cyan</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Pcvr.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/pcvr_surface</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="contentPadding">18dp</item>
+        <item name="android:layout_marginTop">14dp</item>
+    </style>
+
+    <!-- Implicit parent of the Pcvr.* text styles below. -->
+    <style name="Pcvr" />
+
+    <style name="Pcvr.SectionTitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/pcvr_text_dim</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="Pcvr.Body">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/pcvr_text</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
+
+    <style name="Pcvr.Caption">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/pcvr_text_dim</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="FitOverlayText">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:background">#B3000000</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginEnd">40dp</item>
+    </style>
+
+    <style name="ArCoreOverlayText">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+</resources>

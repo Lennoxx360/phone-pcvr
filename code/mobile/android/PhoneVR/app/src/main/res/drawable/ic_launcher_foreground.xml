@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Strap -->
+    <path
+        android:pathData="M23,52 H27 M81,52 H85"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeColor="#5B6478" />
+    <!-- Visor with lens cut-outs (evenOdd leaves the lenses transparent). -->
+    <path
+        android:fillType="evenOdd"
+        android:pathData="M34,38 H74 A8,8 0 0 1 82,46 V62 A8,8 0 0 1 74,70 H62 L59,64 Q54,57 49,64 L46,70 H34 A8,8 0 0 1 26,62 V46 A8,8 0 0 1 34,38 Z M35,54 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 Z M59,54 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="26" android:startY="38"
+                android:endX="82" android:endY="70"
+                android:startColor="#8B5CF6"
+                android:endColor="#22D3EE" />
+        </aapt:attr>
+    </path>
+    <!-- Tracking "spark" above the visor -->
+    <path
+        android:pathData="M54,25 L56,31 L62,33 L56,35 L54,41 L52,35 L46,33 L52,31 Z"
+        android:fillColor="#22D3EE" />
+</vector>

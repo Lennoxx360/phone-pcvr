@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/arcore_6dof_toggle"
+        android:checkable="true"
+        android:title="@string/arcore_6dof" />
+    <item
+        android:id="@+id/timewarp_toggle"
+        android:checkable="true"
+        android:title="@string/timewarp" />
+    <item
+        android:id="@+id/gaze_pointer_toggle"
+        android:checkable="true"
+        android:title="@string/gaze_pointer" />
+    <item
+        android:id="@+id/hand_tracking_toggle"
+        android:checkable="true"
+        android:title="@string/hand_tracking" />
+    <item
+        android:id="@+id/hands_which_cycle"
+        android:title="@string/hands_which" />
+    <item
+        android:id="@+id/max_brightness_toggle"
+        android:checkable="true"
+        android:title="@string/max_brightness" />
+    <item
+        android:id="@+id/arcore_overlay_toggle"
+        android:checkable="true"
+        android:title="@string/arcore_overlay" />
+    <item
+        android:id="@+id/steamvr_menu"
+        android:title="@string/steamvr_menu" />
+    <item
+        android:id="@+id/reset_play_space"
+        android:title="@string/reset_play_space" />
+    <item
+        android:id="@+id/adjust_fit"
+        android:title="@string/fit_menu" />
+    <item
+        android:id="@+id/switch_viewer"
+        android:title="@string/switch_viewer" />
+    <item
+        android:id="@+id/back_to_home"
+        android:title="@string/back_to_home" />
+</menu>
