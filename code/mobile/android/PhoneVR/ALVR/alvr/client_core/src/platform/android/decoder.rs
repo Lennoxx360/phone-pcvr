@@ -131,7 +131,7 @@ impl VideoDecoderSource {
         } else if let Some(spare) = crate::pvr::spare_frames_override() {
             // Phone PCVR: deterministic buffer. Show the oldest decoded frame and keep at most
             // `spare` newer ones waiting. Stock ALVR's running average counts the frame about to
-            // be shown, so at 1.0 it dropped ~every other frame (24 of 60/s shown, 2026-11-22).
+            // be shown, so at 1.0 it dropped ~every other frame (24 of 60/s shown).
             let mut dropped = 0;
             while image_queue_lock.len() > spare + 1 {
                 image_queue_lock.pop_front();

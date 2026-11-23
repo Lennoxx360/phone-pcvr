@@ -191,7 +191,7 @@ object Settings {
                 60f),
         )
 
-    // ---- Streaming: latency & artifacts (2026-11-22) ----
+    // ---- Streaming: latency & artifacts ----
     // Every option defaults to the previous behaviour ("Stock"), so nothing changes until a
     // profile is picked or an option is switched. Each one is also in the in-VR ⚙ menu to A/B.
 

@@ -94,7 +94,7 @@ struct NativeContext {
     AlvrViewParams lastFrameViewParams[2] = {};   // render-time views of the last stream frame
     bool haveFrame = false;
 
-    // Latency / artifact options (2026-11-22). Set from Java (any thread), read where used.
+    // Latency / artifact options. Set from Java (any thread), read where used.
     // Cap on ALVR's lookahead for the poses sent to the PC (0 = no cap).
     std::atomic<int64_t> lookaheadCapNs{0};
     // Extra FOV per edge the PC renders, so timewarp rotates into real pixels, not black.
@@ -271,7 +271,7 @@ void measureRenderInterval(int64_t nowNs) {
 }
 
 // Real swap -> photons time, from EGL_ANDROID_get_frame_timestamps. 0 until measured.
-// Measured 62 ms at 60 Hz on the S24U (2026-11-22), against the 42 ms the legacy aim assumes.
+// Measured 62 ms at 60 Hz on the S24U, against the 42 ms the legacy aim assumes.
 std::atomic<int64_t> measuredDisplayLatencyNs{0};
 bool frameTimestampsSupported = true;
 
@@ -453,7 +453,7 @@ void updateViewConfigs(uint64_t targetTimestampNs = 0) {
 // Gaze pointer pose: a controller below-left of the eyes, aimed at the point kAimDistM straight
 // ahead, so the laser dot sits in the centre of the view for menus at that distance.
 // It is the LEFT controller: on this setup SteamVR never assigns ALVR's right controller the
-// RightHand role (role Invalid, measured 2026-11-20 via IVRSystem), so the dashboard draws no
+// RightHand role (role Invalid, checked via IVRSystem), so the dashboard draws no
 // laser for it. The left one has its role, and its menu button is what opens the dashboard.
 AlvrPose gazeControllerPose(const AlvrPose &head) {
     const float kOffsetHead[3] = {-0.12f, -0.18f, -0.12f};   // right, down, forward (m)
@@ -574,7 +574,7 @@ void sendHandButtons(const AlvrPose *skeletons[2]) {
             // Release only when the hand has really gone (no detection arriving for 300 ms).
             // This used the capture time with a 150 ms limit, which results are already ~100 ms
             // past on arrival: at 17 Hz it released between every two frames, so the 2-frame
-            // press never completed (2026-11-22: tips 3-10 mm apart, zero clicks).
+            // press never completed (tips 3-10 mm apart, zero clicks).
             if (CTX.handFilter.lastSeenS(side) < 0 ||
                 nowNs - CTX.handResultNs[side] > 300'000'000) {
                 CTX.pinchDet[side].release();
@@ -1597,7 +1597,7 @@ extern "C" JNIEXPORT void JNICALL
 Java_io_github_lennoxx360_phonepcvr_ALVRActivity_sendSteamVrMenuNative(JNIEnv *,
                                                                        jobject,
                                                                        jboolean pressed) {
-    // (The right controller's system button doesn't toggle the dashboard: tested 2026-11-20.)
+    // (The right controller's system button doesn't toggle the dashboard.)
     static const uint64_t LEFT_MENU_CLICK_ID =
         alvr_path_string_to_id("/user/hand/left/input/menu/click");
     AlvrButtonValue value = {};

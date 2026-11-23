@@ -18,8 +18,8 @@
     Balanced          The settings used on the dev setup (1072-wide, 30 Mbps constant, TCP).
     Restore           Copies the newest session.json.bak-* back.
 
-  Never changes networking (adapters, hotspot, Wi-Fi). TCP stays TCP: UDP was tested on
-  2026-11-22 and was worse on this setup.
+  Never changes networking (adapters, hotspot, Wi-Fi). TCP stays TCP: UDP was tested and was
+  worse on the dev setup.
 
 .EXAMPLE
   .\alvr-pc-profile.ps1 -Profile BadWifiHighEndPc

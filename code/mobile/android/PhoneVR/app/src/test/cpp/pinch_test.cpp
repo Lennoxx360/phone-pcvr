@@ -98,7 +98,7 @@ int main() {
         check("no second click", (float) h.presses(), 1, 0);
     }
     {
-        // 17 hand frames/s (as measured on device 2026-11-22): a pinch clicks on its 2nd frame.
+        // 17 hand frames/s (as measured on device): a pinch clicks on its 2nd frame.
         Hysteresis h;
         int64_t t = 0;
         const int64_t DT17 = 58'000'000;

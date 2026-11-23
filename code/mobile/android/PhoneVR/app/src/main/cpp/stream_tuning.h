@@ -1,7 +1,7 @@
 #ifndef PHONEVR_STREAM_TUNING_H
 #define PHONEVR_STREAM_TUNING_H
 
-// Small, host-testable pieces of the latency/artifact work (2026-11-22):
+// Small, host-testable pieces of the latency/artifact work:
 //  - FOV overscan: the PC renders a slightly wider image so timewarp has pixels to rotate into
 //    instead of black (or stretched) edges;
 //  - UV crop: shows the display part of an overscanned image when timewarp is off;
@@ -122,7 +122,7 @@ class DampedPrediction {
 };
 
 // ALVR's lookahead (its average total pipeline latency) balloons during network stalls: 118 ms
-// was logged on 2026-11-22. Poses extrapolated that far overshoot whenever the head changes
+// has been logged. Poses extrapolated that far overshoot whenever the head changes
 // direction. capNs <= 0 disables the cap.
 inline int64_t capLookahead(int64_t alvrLookaheadNs, int64_t capNs) {
     if (capNs <= 0)
@@ -163,8 +163,8 @@ inline bool planarReproject(
 constexpr float kMaxPositionalOffsetM = 0.25f;
 
 // Comfort guard. On a link that can't keep up, the streamer queues frames and they arrive
-// seconds late (4-10 s on 2026-11-22). Timewarp then swings a seconds-old world by up to 77 deg
-// to follow the head, which made the user sick. While frames are badly late, the app shows the
+// seconds late (4-10 s seen in testing). Timewarp then swings a seconds-old world by up to 77 deg
+// to follow the head, which is a quick way to feel sick. While frames are badly late, the app shows the
 // head-tracked lobby with an explanation instead.
 // Enter: smoothed lateness above enterMs. Leave: below exitMs continuously for exitHoldNs.
 class ComfortGuard {

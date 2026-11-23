@@ -397,7 +397,7 @@ static void testFilterStickyHandedness() {
 }
 
 static void testNoDoubleHandAcrossGaps() {
-    // 2026-11-22 log: one hand ~15 cm left of centre (borderline geometric score), MediaPipe's
+    // Seen in a test session: one hand ~15 cm left of centre (borderline geometric score), MediaPipe's
     // label flipping, detections with 0.2 s gaps. It was sent as both hands at once.
     HandFilter f;
     int both = 0, leftFrames = 0, rightFrames = 0;
@@ -456,7 +456,7 @@ static void testSwitchingHandsInSameSpot() {
     // Right hand held out, then dropped; the left hand appears in the same spot, labelled Left.
     // Within reacquireS (1.5 s) that looks exactly like the same hand coming back (the common
     // case with this camera's narrow view), so it keeps the right side; after that, label and
-    // geometry decide again. (Trade-off chosen 2026-11-22; "Left/Right only" modes avoid it.)
+    // geometry decide again. (A trade-off; "Left/Right only" modes avoid it.)
     HandFilter f;
     for (int i = 0; i < 15; i++) {
         int64_t t = i * DET_NS;
@@ -477,7 +477,7 @@ static void testSwitchingHandsInSameSpot() {
 }
 
 static void testLoneHandReacquiredAcrossCentre() {
-    // 2026-11-22 18:55:33: a lone left hand, lost for 0.5 s, came back right of centre with
+    // Seen in a test session: a lone left hand, lost for 0.5 s, came back right of centre with
     // MediaPipe saying "Right" and a geometric score pointing right. It must stay left.
     HandFilter f;
     int64_t t = 0;

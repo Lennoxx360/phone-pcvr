@@ -328,7 +328,7 @@ impl ClientCoreContext {
         // Phone PCVR: stock ALVR fell back to last_good_view_params (never written, so an
         // identity pose) when the frame's tracking sample had left the queue, e.g. behind a
         // multi-second backlog on a weak link. Timewarp then rotated the picture by the full head
-        // orientation (89.6 deg measured on 2026-11-22). Use the closest known sample instead.
+        // orientation (89.6 deg measured). Use the closest known sample instead.
         let mut view_params = *self.connection_context.last_good_view_params.read();
         {
             let queue = self.connection_context.view_params_queue.read();

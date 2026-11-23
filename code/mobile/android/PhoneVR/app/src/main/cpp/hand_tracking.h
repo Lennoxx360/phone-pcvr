@@ -148,7 +148,7 @@ inline float pinchDistance(const float p[21][3], float zWeight = 1.f, bool pads 
 // The hand's distance comes from fitting MediaPipe's metric shape to the image (solveTranslation).
 // Each joint is then put where it actually is in the image: its 2D landmark back-projected at
 // that joint's depth (hand depth + the shape's relative depth). The rigid metric shape alone
-// left touching fingertips ~2-3 cm apart (2026-11-22: 0 pinches detected in a whole session);
+// left touching fingertips ~2-3 cm apart (not a single pinch registered in testing);
 // the 2D landmarks are far more precise, so fingers that touch in the image touch in 3D.
 // imageAnchored = false keeps the old rigid-shape placement.
 inline bool placeHand(const float world[21][3],
@@ -524,7 +524,7 @@ struct HandFilterConfig {
     // Depth (along the camera ray) comes from the hand's apparent size and is far noisier than
     // the sideways position, which comes straight from the image. So the wrist is smoothed per
     // axis: sideways like before, along the ray alongFactor times slower, and the depth part of a
-    // single step is capped at maxAlongStepM (a 24 cm depth glitch on 2026-11-22 made a ghost hand).
+    // single step is capped at maxAlongStepM (a 24 cm depth glitch once made a ghost hand).
     float minCutoffHz = 1.0f;
     float beta = 2.0f;
     float derivCutoffHz = 1.5f;
@@ -555,7 +555,7 @@ struct HandFilterConfig {
     float duplicateM = 0.06f;
     // A hand that comes back (lost < reacquireS ago, within reacquireRadiusM) while the other
     // hand isn't around keeps its side, unless the geometry is beyond +-strongScore the other
-    // way. On 2026-11-22 a lone left hand reappeared right of centre and became "right".
+    // way. In testing a lone left hand reappeared right of centre and became "right".
     float reacquireS = 1.5f;
     float reacquireRadiusM = 0.45f;
     float strongScore = 2.5f;

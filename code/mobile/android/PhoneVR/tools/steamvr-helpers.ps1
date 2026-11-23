@@ -2,7 +2,7 @@
 #
 # SteamVR and the ALVR dashboard are closed *gracefully*: their windows are asked to close, and
 # we wait for the processes to exit. Force-killing SteamVR mid-run can leave its drivers and
-# input hooks in a bad state (on 2026-11-22 a long session of force-kills ended with the
+# input hooks in a bad state (a long session of force-kills once ended with the
 # keyboard unusable until a reboot), so Stop-Process -Force is only a last resort, and it says so.
 
 function Close-SteamVrAndDashboard {

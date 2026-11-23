@@ -186,7 +186,7 @@ public class ArCoreTracker {
     synchronized float[] poseAt(long cameraTs, float[][] intrinsicsOut, boolean finalTry) {
         // Interpolate between the tracked ARCore frames just before and after the hand frame.
         // (In shared mode ARCore's frame timestamps don't match the camera frames 1:1, so an
-        // exact match never happened on 2026-11-22.) Before ARCore has passed the hand frame,
+        // exact match basically never happens.) Before ARCore has passed the hand frame,
         // return null so the caller waits; on the final try, take the nearest within 60 ms.
         int before = -1, after = -1;
         for (int i = 0; i < POSE_RING; i++) {
@@ -645,7 +645,7 @@ public class ArCoreTracker {
             }
         }
         // In shared mode ARCore sometimes delivers frames < 5 ms apart (seen as "60 fps" and
-        // absurd turn rates in fusion on 2026-11-22). Only frames >= 5 ms apart reach fusion.
+        // absurd turn rates in fusion). Only frames >= 5 ms apart reach fusion.
         boolean newFrame =
                 sharedMode
                         ? Math.abs(frameTs - lastCameraTimestampNs) >= 5_000_000L

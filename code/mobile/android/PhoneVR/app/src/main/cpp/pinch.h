@@ -5,7 +5,7 @@
 //
 // ALVR's server-side gesture emulation turns the thumb-index distance into an analog trigger that
 // starts rising at 6.4 cm (centre to centre) and has only a 50 ms on-delay, so a relaxed hand kept
-// firing triggers (2026-11-22). Here a button goes down only when the distance stays below
+// firing triggers. Here a button goes down only when the distance stays below
 // pressBelowM for pressHoldNs, and up only when it stays above releaseAboveM for releaseHoldNs.
 // Decisions are made on real camera observations only: a hand that is merely being held/coasted
 // after leaving the camera's view releases instead of clicking.
@@ -18,7 +18,7 @@ namespace pinch {
 
 class Hysteresis {
   public:
-    // 2026-11-22 VRChat log: held pinches read 3-30 mm, relaxed hands 30-80 mm, and a release
+    // VRChat testing: held pinches read 3-30 mm, relaxed hands 30-80 mm, and a release
     // at 45 mm kept a press held ~0.8 s after the fingers had opened to ~40 mm.
     float pressBelowM = 0.020f;         // firm pinch to click (was 25 mm: trigger happy)
     float releaseAboveM = 0.038f;       // let go above 38 mm for releaseHoldNs...

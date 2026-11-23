@@ -156,7 +156,7 @@ class OneEuro3 {
 struct Config {
     // Phone camera position relative to the head centre (between the eyes), in head coordinates
     // (x right, y up, -z forward), metres. Depends on the shell; becomes a setting in milestone 5.
-    // Calibrated 2026-11-19 for Galaxy S24 Ultra in a Gear VR shell (tools/calibrate_pivot.py on a
+    // Calibrated for a Galaxy S24 Ultra in a Gear VR shell (tools/calibrate_pivot.py on a
     // 24 s head-rotation recording): camera at (-0.045, +0.105, -0.137) m from the neck pivot,
     // i.e. this value + eyeFromNeck. The camera is 4.5 cm left of centre.
     float cameraInHead[3] = {-0.045f, 0.030f, -0.057f};
@@ -199,7 +199,7 @@ struct Config {
     // At most this much absorbed offset is bled back; anything beyond it is kept permanently.
     // ARCore's own drift fixes are centimetres to tens of centimetres. Multi-metre jumps happen
     // when it relocalises (e.g. the camera was covered while the phone went into the headset),
-    // and bleeding those made the view slide through the world for minutes on 2026-11-20
+    // and bleeding those made the view slide through the world for minutes
     // (8 m absorbed). The play-space origin is arbitrary, so keeping a big offset costs nothing.
     float bleedMaxM = 0.3f;
 };

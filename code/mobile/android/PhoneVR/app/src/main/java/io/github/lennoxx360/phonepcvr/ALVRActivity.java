@@ -81,7 +81,7 @@ public class ALVRActivity extends AppCompatActivity
     private final Handler uiHandler = new Handler(Looper.getMainLooper());
     private static final long FIT_IDLE_EXIT_MS = 12000;
 
-    // ---- Low-latency frame pacing (2026-11-22) ----
+    // ---- Low-latency frame pacing ----
     // GLSurfaceView normally renders as soon as a buffer is free, so frames queue up ~3.7
     // refreshes (62 ms measured) before they're shown. With pacing on, the renderer draws once per
     // vsync, starting pacingBudgetNs before the next one, so the queue stays nearly empty.
