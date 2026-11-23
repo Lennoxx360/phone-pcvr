@@ -155,7 +155,7 @@ class OneEuro3 {
 
 struct Config {
     // Phone camera position relative to the head centre (between the eyes), in head coordinates
-    // (x right, y up, -z forward), metres. Depends on the shell; becomes a setting in milestone 5.
+    // (x right, y up, -z forward), metres. Depends on the shell.
     // Calibrated for a Galaxy S24 Ultra in a Gear VR shell (tools/calibrate_pivot.py on a
     // 24 s head-rotation recording): camera at (-0.045, +0.105, -0.137) m from the neck pivot,
     // i.e. this value + eyeFromNeck. The camera is 4.5 cm left of centre.

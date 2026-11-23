@@ -7,7 +7,7 @@ everything else (3D placement, filtering, pinch, sending to SteamVR through ALVR
 streamer stays stock.
 
     python pc_assist.py                 # find the phone automatically (UDP beacon)
-    python pc_assist.py --phone 192.168.137.131
+    python pc_assist.py --phone 192.168.137.50
     python pc_assist.py --fake          # no MediaPipe: answers "no hands" (protocol test)
 
 Wire format: see PcAssistProtocol.java (phone side). Little endian, TCP, the PC connects.

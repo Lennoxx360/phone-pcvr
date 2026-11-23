@@ -1,12 +1,16 @@
 # Builds a signed release APK and packs a zip you can send to people.
 #   powershell -ExecutionPolicy Bypass -File tools\make-share.ps1 [-SkipBuild]
-# Output: C:\coding_shit\phone-pcvr\share\PhonePCVR-v<version>.zip (+ the loose folder)
+# Output: <workspace>\share\PhonePCVR-v<version>.zip (+ the loose folder); the workspace is the
+# folder that holds the repo.
 # Needs the release key from ~/.phonepcvr/signing.properties (see app/build.gradle).
 param([switch]$SkipBuild)
 $ErrorActionPreference = 'Stop'
 
-. C:\coding_shit\phone-pcvr\tools\env.ps1
 $proj = Split-Path $PSScriptRoot -Parent
+$workspace = (Resolve-Path "$proj\..\..\..\..\..").Path
+# Optional build environment (JAVA_HOME, ANDROID_HOME, ...): <workspace>\tools\env.ps1
+$envScript = Join-Path $workspace 'tools\env.ps1'
+if (Test-Path $envScript) { . $envScript }
 $signing = if ($env:PHONEPCVR_SIGNING) { $env:PHONEPCVR_SIGNING } else { "$env:USERPROFILE\.phonepcvr\signing.properties" }
 if (-not (Test-Path $signing)) { throw "No release key at $signing. Without it the APK would be signed with the public test key." }
 
@@ -29,7 +33,7 @@ $certs = & $apksigner.FullName verify --print-certs $apk.FullName
 if ($LASTEXITCODE -ne 0) { throw "apksigner verify failed" }
 if (-not ($certs -match 'CN=Phone PCVR')) { throw "APK isn't signed with the Phone PCVR key:`n$certs" }
 
-$outRoot = 'C:\coding_shit\phone-pcvr\share'
+$outRoot = Join-Path $workspace 'share'
 $name = "PhonePCVR-v$ver"
 $dir = Join-Path $outRoot $name
 if (Test-Path $dir) { Remove-Item -Recurse -Force $dir -Confirm:$false }

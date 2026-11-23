@@ -81,10 +81,10 @@ struct NativeContext {
     AlvrViewParams viewParams[2] = {};
     AlvrDeviceMotion deviceMotion = {};
 
-    // ARCore position + gyro rotation (milestone 2).
+    // ARCore position + gyro rotation.
     fusion::PoseFusion poseFusion;
 
-    // Rotational timewarp (milestone 3). Render thread only, except the enabled flag.
+    // Rotational timewarp. Render thread only, except the enabled flag.
     timewarp::Timewarp timewarp;
     std::atomic<bool> timewarpEnabled{true};
     // Gaze pointer: a fake right controller that follows the head (replaces the tracked right
@@ -136,7 +136,7 @@ struct NativeContext {
     float twAngleSumDeg = 0, twAngleMaxDeg = 0;
     char twStatus[320] = "timewarp: no stream yet";
 
-    // Hand tracking (milestone 4). Written by the MediaPipe worker, read by the input thread.
+    // Hand tracking. Written by the MediaPipe worker, read by the input thread.
     std::mutex handsMutex;
     hands::HandObservation hands[2];   // 0 = left, 1 = right, ARCore world (latest raw, for stats)
     hands::HandFilter handFilter;      // smoothed + predicted tracks actually sent to ALVR

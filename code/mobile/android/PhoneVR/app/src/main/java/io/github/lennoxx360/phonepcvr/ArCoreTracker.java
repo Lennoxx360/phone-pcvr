@@ -46,7 +46,7 @@ import java.util.Locale;
 /**
  * Runs an ARCore session next to the Cardboard head tracker and reports its pose.
  *
- * <p>Milestone 1: the pose is only displayed and logged, not sent to ALVR yet. Threading: {@link
+ * <p>Its pose feeds the native pose fusion (position) and the hand tracker. Threading: {@link
  * #resume}, {@link #pause} and {@link #close} run on the UI thread; the {@code onSurface*} and
  * {@link #onDrawFrame} calls run on the GLSurfaceView render thread. The activity must pause the
  * GLSurfaceView before calling {@link #pause}, so update() never races with pause().

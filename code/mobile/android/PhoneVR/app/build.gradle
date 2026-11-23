@@ -188,6 +188,12 @@ task buildClientLib {
     doLast {
         exec {
             workingDir '../ALVR'
+            // Panic messages embed source paths; map the home folder (cargo registry) and the
+            // repo away so the APK doesn't carry the build machine's user or folder names.
+            environment 'CARGO_ENCODED_RUSTFLAGS', [
+                "--remap-path-prefix=${System.getProperty('user.home')}=~",
+                "--remap-path-prefix=${file('../../../../..').canonicalPath}=.",
+            ].join('\u001f')
             if(defaultALVRFlavour.length() > 0)
                 commandLine 'cargo', 'xtask', 'build-client-lib', '--no-stdcpp', defaultALVRFlavour
             else
